@@ -1,0 +1,22 @@
+# robots.txt para Sancor Salud AMBA Landing Page
+
+User-agent: *
+Allow: /
+
+# Sitemap (actualiza con tu dominio real)
+Sitemap: https://tudominio.com/sitemap.xml
+
+# Permitir indexación de todas las páginas
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+
+# Evitar indexar archivos innecesarios (si los tienes)
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /test/
+
+# Crawl-delay para ser amigables con los bots
+Crawl-delay: 1
+
+
