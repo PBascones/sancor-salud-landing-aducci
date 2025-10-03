@@ -360,82 +360,286 @@ ul {
     background-color: var(--bg-light);
 }
 
-.plans-grid {
+.plans-simple {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-.plan-card {
+@media (max-width: 992px) {
+    .plans-simple {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.plan-simple-card {
     background-color: var(--bg-white);
     border-radius: 12px;
     padding: 2.5rem;
+    text-align: center;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    position: relative;
     border: 2px solid var(--border-color);
 }
 
-.plan-card:hover {
+.plan-simple-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
-.plan-card.featured {
+.plan-simple-card.featured {
     border-color: var(--primary-color);
     box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
 }
 
-.plan-card.featured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 12px 12px 0 0;
+.plan-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.plan-badge {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.plan-card.featured .plan-badge {
-    background-color: var(--secondary-color);
-}
-
-.plan-title {
+.plan-simple-card h3 {
     font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: var(--text-dark);
 }
 
-.plan-description {
+.plan-simple-card p {
     color: var(--text-light);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    min-height: 60px;
 }
 
-.plan-features {
+.plans-info {
+    background-color: var(--bg-white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.plans-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
     margin-bottom: 2rem;
 }
 
-.plan-features li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border-color);
+.plans-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-simple {
+    padding: 1rem;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.plan-badge-small {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.plan-badge-small.featured {
+    background-color: var(--secondary-color);
+}
+
+.plan-badge-small.exclusive {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
     color: var(--text-dark);
 }
 
-.plan-features li:last-child {
+.btn-details {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   PLAN MODAL
+   ============================================ */
+.plan-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.plan-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.plan-modal-content {
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.plan-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--border-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+}
+
+.plan-modal-title {
+    flex: 1;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.plan-modal-title h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: white;
+}
+
+.plan-counter {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+}
+
+.plan-nav-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.plan-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.plan-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.plan-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    transition: var(--transition);
+    padding: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.plan-modal-close:hover {
+    transform: rotate(90deg);
+    opacity: 0.8;
+}
+
+.plan-modal-body {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.plan-modal-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-modal-body li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    position: relative;
+}
+
+.plan-modal-body li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.plan-modal-body li:last-child {
     border-bottom: none;
+}
+
+.plan-modal-footer {
+    padding: 1.5rem 2rem;
+    border-top: 2px solid var(--border-color);
+    text-align: center;
+    background-color: var(--bg-light);
+    border-radius: 0 0 16px 16px;
+}
+
+.plan-modal-footer .btn {
+    min-width: 200px;
 }
 
 /* ============================================
@@ -869,6 +1073,53 @@ ul {
 }
 
 @media (max-width: 768px) {
+    /* Plan Modal Mobile */
+    .plan-modal.active {
+        padding: 0;
+        align-items: flex-start;
+    }
+    
+    .plan-modal-content {
+        max-width: 100%;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+    }
+    
+    .plan-modal-header {
+        border-radius: 0;
+        padding: 1rem;
+    }
+    
+    .plan-modal-title h2 {
+        font-size: 1.3rem;
+    }
+    
+    .plan-counter {
+        font-size: 0.8rem;
+    }
+    
+    .plan-nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .plan-modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 2rem;
+    }
+    
+    .plan-modal-body {
+        padding: 1.5rem;
+    }
+    
+    .plan-modal-footer {
+        padding: 1rem;
+        border-radius: 0;
+    }
+    
     /* Navbar sticky en mobile */
     .navbar {
         position: sticky;
@@ -962,9 +1213,13 @@ ul {
     }
     
     .benefits-grid,
-    .plans-grid,
+    .plans-simple,
     .discounts-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .plans-features-grid {
+        grid-template-columns: 1fr 1fr;
     }
     
     .form-row {
@@ -1005,9 +1260,17 @@ ul {
     }
     
     .benefit-card,
-    .plan-card,
+    .plan-simple-card,
     .discount-card {
         padding: 1.5rem;
+    }
+    
+    .plans-features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plans-info {
+        padding: 2rem 1.5rem;
     }
     
     .contact-form {

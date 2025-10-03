@@ -202,53 +202,68 @@
     <!-- Plans Section -->
     <section id="planes" class="plans">
         <div class="container">
-            <h2 class="section-title">Nuestros Planes</h2>
-            <p class="section-subtitle">Encontrá el plan que mejor se adapta a vos y tu familia</p>
+            <h2 class="section-title">Planes de Salud</h2>
+            <p class="section-subtitle">Sancor Salud ofrece diferentes planes adaptados a tus necesidades y presupuesto</p>
             
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <div class="plan-badge">Popular</div>
-                    <h3 class="plan-title">Plan Individual</h3>
-                    <p class="plan-description">Ideal para vos</p>
-                    <ul class="plan-features">
-                        <li>✓ Consultas médicas</li>
-                        <li>✓ Estudios y prácticas</li>
-                        <li>✓ Internación con cobertura</li>
-                        <li>✓ Medicamentos ambulatorios</li>
-                        <li>✓ Emergencias 24/7</li>
-                        <li>✓ Red amplia de prestadores</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-plan">Solicitar Cotización</a>
+            <div class="plans-simple">
+                <div class="plan-simple-card" data-plan="s1000">
+                    <div class="plan-icon">💊</div>
+                    <h3>Plan S1000</h3>
+                    <p>Plan básico con copagos, ideal para quienes buscan una opción económica</p>
+                    <button class="btn btn-secondary btn-details" data-plan-id="0">Ver Detalles</button>
+                    <a href="#contacto" class="btn btn-plan">Cotizar Plan</a>
                 </div>
                 
-                <div class="plan-card featured">
-                    <div class="plan-badge">Recomendado</div>
-                    <h3 class="plan-title">Plan Familiar</h3>
-                    <p class="plan-description">Protección para toda la familia</p>
-                    <ul class="plan-features">
-                        <li>✓ Todo lo del Plan Individual</li>
-                        <li>✓ Cobertura para hasta 5 miembros</li>
-                        <li>✓ Pediatría y vacunación</li>
-                        <li>✓ Odontología incluida</li>
-                        <li>✓ Descuentos familiares</li>
-                        <li>✓ Sin límite de edad para hijos</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-plan">Solicitar Cotización</a>
+                <div class="plan-simple-card" data-plan="s1500">
+                    <div class="plan-icon">👤</div>
+                    <h3>Plan S1500</h3>
+                    <p>Habitación individual y 70% de cobertura en medicamentos</p>
+                    <button class="btn btn-secondary btn-details" data-plan-id="1">Ver Detalles</button>
+                    <a href="#contacto" class="btn btn-plan">Cotizar Plan</a>
                 </div>
                 
-                <div class="plan-card">
-                    <div class="plan-badge">Empresas</div>
-                    <h3 class="plan-title">Plan Corporativo</h3>
-                    <p class="plan-description">Para tu equipo de trabajo</p>
-                    <ul class="plan-features">
-                        <li>✓ Cobertura para empleados</li>
-                        <li>✓ Planes grupales con descuentos</li>
-                        <li>✓ Medicina laboral</li>
-                        <li>✓ Atención preferencial</li>
-                        <li>✓ Facturación centralizada</li>
-                        <li>✓ Asesoramiento empresarial</li>
-                    </ul>
-                    <a href="#contacto" class="btn btn-plan">Solicitar Cotización</a>
+                <div class="plan-simple-card featured" data-plan="s3000">
+                    <div class="plan-icon">⭐</div>
+                    <h3>Plan S3000</h3>
+                    <p>Cobertura 100% en anticonceptivos, ortodoncia hasta 30 años y más</p>
+                    <button class="btn btn-secondary btn-details" data-plan-id="2">Ver Detalles</button>
+                    <a href="#contacto" class="btn btn-plan">Cotizar Plan</a>
+                </div>
+                
+                <div class="plan-simple-card" data-plan="s3500">
+                    <div class="plan-icon">🦷</div>
+                    <h3>Plan S3500</h3>
+                    <p>Incluye prótesis odontológica al 100% y más sesiones de rehabilitación</p>
+                    <button class="btn btn-secondary btn-details" data-plan-id="3">Ver Detalles</button>
+                    <a href="#contacto" class="btn btn-plan">Cotizar Plan</a>
+                </div>
+                
+                <div class="plan-simple-card" data-plan="s4500">
+                    <div class="plan-icon">💎</div>
+                    <h3>Plan S4500</h3>
+                    <p>Implantes odontológicos, cirugía estética y tratamientos avanzados</p>
+                    <button class="btn btn-secondary btn-details" data-plan-id="4">Ver Detalles</button>
+                    <a href="#contacto" class="btn btn-plan">Cotizar Plan</a>
+                </div>
+                
+                <div class="plan-simple-card" data-plan="s5000">
+                    <div class="plan-icon">👑</div>
+                    <h3>Plan S5000</h3>
+                    <p>Habitación VIP, 60% farmacia y reintegros especiales sin límite</p>
+                    <button class="btn btn-secondary btn-details" data-plan-id="5">Ver Detalles</button>
+                    <a href="#contacto" class="btn btn-plan">Cotizar Plan</a>
+                </div>
+            </div>
+            
+            <div class="plans-info">
+                <h3>Todos nuestros planes incluyen:</h3>
+                <div class="plans-features-grid">
+                    <div class="feature-simple">✓ Consultas médicas</div>
+                    <div class="feature-simple">✓ Estudios y prácticas</div>
+                    <div class="feature-simple">✓ Internación</div>
+                    <div class="feature-simple">✓ Emergencias 24/7</div>
+                    <div class="feature-simple">✓ Medicamentos</div>
+                    <div class="feature-simple">✓ Red de prestadores</div>
                 </div>
             </div>
         </div>
@@ -333,27 +348,27 @@
             
             <div class="discounts-grid">
                 <div class="discount-card">
-                    <div class="discount-percentage">15%</div>
-                    <h3>Descuento por Grupo Familiar</h3>
-                    <p>Hasta 15% de descuento al incorporar a toda tu familia en el mismo plan</p>
-                </div>
-                
-                <div class="discount-card">
-                    <div class="discount-percentage">20%</div>
-                    <h3>Promoción Jóvenes</h3>
-                    <p>20% de descuento para menores de 30 años en planes individuales</p>
-                </div>
-                
-                <div class="discount-card">
-                    <div class="discount-percentage">10%</div>
-                    <h3>Débito Automático</h3>
-                    <p>10% de bonificación al adherir a débito automático de tarjeta o cuenta</p>
+                    <div class="discount-percentage">50%</div>
+                    <h3>Descuentos Especiales</h3>
+                    <p>Hasta 50% de descuento según tu edad, grupo familiar y forma de pago</p>
                 </div>
                 
                 <div class="discount-card">
                     <div class="discount-percentage">🎁</div>
-                    <h3>Bonificación Primer Mes</h3>
-                    <p>Tu primer mes bonificado al contratar ahora</p>
+                    <h3>Grupo Familiar</h3>
+                    <p>Grandes descuentos al incorporar a toda tu familia en el mismo plan</p>
+                </div>
+                
+                <div class="discount-card">
+                    <div class="discount-percentage">💳</div>
+                    <h3>Débito Automático</h3>
+                    <p>Bonificación especial al adherir a débito automático de tarjeta o cuenta</p>
+                </div>
+                
+                <div class="discount-card">
+                    <div class="discount-percentage">🏆</div>
+                    <h3>Promociones Vigentes</h3>
+                    <p>Consultanos por las promociones del mes y bonificaciones especiales</p>
                 </div>
             </div>
             
@@ -449,6 +464,25 @@
                     </div>
                     
                     <div class="form-group">
+                        <label for="area-interes">¿Cuál es el área de salud de tu mayor interés?</label>
+                        <select id="area-interes" name="area-interes">
+                            <option value="">Seleccionar área de interés (opcional)</option>
+                            <option value="cobertura-internacional">Cobertura Internacional</option>
+                            <option value="odontologia-implantes">Odontología (Implantes)</option>
+                            <option value="odontologia-pernos">Odontología (Pernos y Coronas)</option>
+                            <option value="ortodoncia">Ortodoncia</option>
+                            <option value="cirugia-estetica">Cirugía Estética</option>
+                            <option value="cirugia-refractiva">Cirugía Refractiva Ojos</option>
+                            <option value="opticas">Ópticas (Marcos, Cristales o Lentes de Contacto)</option>
+                            <option value="emergencia-24hs">Emergencia Médica 24 hs</option>
+                            <option value="habitacion-privada">Habitación Privada en Internaciones</option>
+                            <option value="ortopedia">Ortopedia</option>
+                            <option value="kinesiologia">Kinesiología</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="mensaje">Consulta o Comentarios</label>
                         <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos más sobre lo que necesitás..."></textarea>
                     </div>
@@ -512,6 +546,33 @@
             </div>
         </div>
     </footer>
+
+    <!-- Plan Details Modal -->
+    <div id="planModal" class="plan-modal">
+        <div class="plan-modal-content">
+            <div class="plan-modal-header">
+                <button class="plan-nav-btn plan-prev" id="planPrev" aria-label="Plan anterior">
+                    <span>←</span>
+                </button>
+                <div class="plan-modal-title">
+                    <h2 id="modalPlanName"></h2>
+                    <span class="plan-counter" id="planCounter"></span>
+                </div>
+                <button class="plan-nav-btn plan-next" id="planNext" aria-label="Plan siguiente">
+                    <span>→</span>
+                </button>
+                <button class="plan-modal-close" id="modalClose" aria-label="Cerrar">×</button>
+            </div>
+            
+            <div class="plan-modal-body" id="modalPlanDetails">
+                <!-- Contenido dinámico del plan -->
+            </div>
+            
+            <div class="plan-modal-footer">
+                <a href="#contacto" class="btn btn-primary" id="modalCotizar">Cotizar este Plan</a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
