@@ -237,6 +237,11 @@ function handleSwipe() {
 // Update "Cotizar este Plan" link in modal
 document.getElementById('modalCotizar').addEventListener('click', closePlanModal);
 
+// "Ver todos los planes" button
+document.getElementById('viewAllPlans').addEventListener('click', () => {
+    openPlanModal(0); // Open first plan (S1000)
+});
+
 // ============================================
 // HAMBURGER MENU TOGGLE
 // ============================================
@@ -502,18 +507,34 @@ function showError(input, message) {
 }
 
 // ============================================
-// NAVBAR SCROLL EFFECT
+// NAVBAR SCROLL EFFECT & MOBILE CTA
 // ============================================
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
+const mobileCTA = document.getElementById('mobileCTA');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
+    // Navbar shadow
     if (currentScroll > 100) {
         navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
     } else {
         navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+    }
+    
+    // Mobile CTA show/hide (only on mobile)
+    if (window.innerWidth <= 768) {
+        // Show after scrolling past hero (around 400px)
+        // Hide when near contact form (check if #contacto is in viewport)
+        const contactSection = document.getElementById('contacto');
+        const contactPosition = contactSection.getBoundingClientRect().top;
+        
+        if (currentScroll > 400 && contactPosition > 200) {
+            mobileCTA.classList.add('visible');
+        } else {
+            mobileCTA.classList.remove('visible');
+        }
     }
     
     lastScroll = currentScroll;
